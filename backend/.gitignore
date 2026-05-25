@@ -1,0 +1,77 @@
+# =========================
+# Java / Spring Boot
+# =========================
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.log
+
+# Maven
+.mvn/wrapper/maven-wrapper.jar
+
+# =========================
+# IDE Files
+# =========================
+.idea/
+*.iml
+
+.vscode/
+.settings/
+.project
+.classpath
+
+# =========================
+# OS Files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Environment Files
+# =========================
+.env
+.env.*
+
+# =========================
+# Application Secrets
+# =========================
+application-local.properties
+application-local.yml
+
+# =========================
+# Uploads / Generated Files
+# =========================
+uploads/
+temp/
+logs/
+
+# =========================
+# Node / React Frontend
+# =========================
+node_modules/
+dist/
+build/
+coverage/
+
+# npm / yarn logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =========================
+# Flyway / DB
+# =========================
+*.db
+
+# =========================
+# IntelliJ
+# =========================
+out/
+
+# =========================
+# Mac / Linux temp
+# =========================
+*.swp
+*.swo

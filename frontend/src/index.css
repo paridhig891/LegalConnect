@@ -1,0 +1,188 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary:    #C9A227;
+  --primary-dk: #A9861F;
+  --navy:       #0B1F3A;
+  --surface:    #F8FAFC;
+  --border:     #E5E7EB;
+  --sidebar-w:  280px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', sans-serif; background: var(--surface); overflow-x: hidden; }
+
+/* ── Sidebar layout ── */
+.sidebar {
+  width: var(--sidebar-w);
+  background: var(--navy);
+  color: white;
+  position: fixed;
+  height: 100vh;
+  overflow-y: auto;
+  box-shadow: 2px 0 10px rgba(0,0,0,.1);
+  z-index: 1000;
+}
+.main-content { margin-left: var(--sidebar-w); min-height: 100vh; padding: 2rem; }
+
+/* ── Nav items ── */
+.nav-item {
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: white;
+  text-decoration: none;
+  transition: all .3s;
+  cursor: pointer;
+  border-left: 4px solid transparent;
+}
+.nav-item:hover  { background: rgba(255,255,255,.10); border-left-color: white; }
+.nav-item.active { background: rgba(255,255,255,.15); border-left-color: white; }
+.nav-item.logout { color: #fca5a5; margin-top: 1rem; border-top: 1px solid rgba(255,255,255,.1); padding-top: 1.5rem; }
+.nav-item.logout:hover { background: rgba(239,68,68,.2); border-left-color: #fca5a5; }
+
+/* ── Content page header ── */
+.content-header {
+  background: white;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+.content-header h1 { color: #111827; font-size: 1.75rem; margin-bottom: .5rem; }
+.content-header p  { color: #6b7280; }
+
+/* ── Stat cards ── */
+.stat-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.05);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform .3s;
+}
+.stat-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,.1); }
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--primary) 100%);
+}
+.stat-icon {
+  width: 50px; height: 50px;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--primary) 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 1.5rem;
+}
+
+/* ── Cards ── */
+.card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.05);
+  margin-bottom: 1.5rem;
+}
+.card h3 { color: #111827; margin-bottom: 1rem; font-size: 1.3rem; }
+.card p  { color: #6b7280; line-height: 1.6; }
+
+/* ── Case cards ── */
+.case-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,.05);
+  border-left: 4px solid var(--primary);
+  transition: all .3s;
+}
+.case-card:hover { box-shadow: 0 8px 20px rgba(0,0,0,.1); transform: translateY(-2px); }
+.case-card.active-border { border-left-color: #10b981; }
+
+/* ── Form controls ── */
+.form-control {
+  width: 100%;
+  padding: .75rem;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  font-size: .95rem;
+  font-family: 'Inter', sans-serif;
+  transition: border-color .3s;
+}
+.form-control:focus { outline: none; border-color: var(--primary); }
+.form-control:disabled { background: var(--surface); cursor: not-allowed; }
+
+/* ── Buttons ── */
+.btn-primary-gold {
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: .75rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .3s;
+  font-family: 'Inter', sans-serif;
+}
+.btn-primary-gold:hover { background: var(--primary-dk); transform: translateY(-2px); }
+.btn-primary-gold:disabled { background: #9ca3af; cursor: not-allowed; transform: none; }
+
+/* ── Alerts ── */
+.alert-success { background:#dcfce7; color:#166534; border:1px solid #86efac; border-radius:8px; padding:1rem; }
+.alert-error   { background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; border-radius:8px; padding:1rem; }
+
+/* ── Badges ── */
+.badge-gold   { background:#fef3c7; color:#92400e; border-radius:20px; padding:.25rem .75rem; font-size:.85rem; font-weight:600; }
+.badge-red    { background:#fee2e2; color:#991b1b; border-radius:20px; padding:.25rem .75rem; font-size:.85rem; font-weight:600; }
+.badge-blue   { background:#e0e7ff; color:#3730a3; border-radius:20px; padding:.25rem .75rem; font-size:.85rem; font-weight:600; }
+.badge-green  { background:#dcfce7; color:#166534; border-radius:20px; padding:.25rem .75rem; font-size:.85rem; font-weight:600; }
+.badge-gray   { background:#f3f4f6; color:#374151; border-radius:20px; padding:.25rem .75rem; font-size:.85rem; font-weight:600; }
+
+/* ── Spinner ── */
+@keyframes spin { to { transform: rotate(360deg); } }
+.spinner {
+  width:28px; height:28px;
+  border:3px solid #f3f4f6;
+  border-top-color: var(--primary);
+  border-radius:50%;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+}
+
+/* ── Notification badge ── */
+.notif-badge {
+  min-width:18px; height:18px;
+  border-radius:999px;
+  background:#ef4444; color:#fff;
+  font-size:.7rem; font-weight:700;
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:0 5px;
+  margin-left:4px;
+}
+
+/* ── Chat layout ── */
+.chat-layout { display:grid; grid-template-columns:320px 1fr; gap:1rem; min-height:80vh; }
+.chat-panel  { background:white; border-radius:12px; border:1px solid var(--border); box-shadow:0 2px 8px rgba(0,0,0,.05); }
+.msg-mine  { margin-left:auto; background:#dbeafe; color:#1e3a8a; }
+.msg-other { background:#f3f4f6; color:#111827; }
+
+@keyframes slideIn { from { transform:translateX(400px); opacity:0; } to { transform:translateX(0); opacity:1; } }
+@keyframes slideUp  { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
+
+.animate-slide-up  { animation: slideUp .5s ease; }
+
+@media (max-width:768px) {
+  .sidebar { width:100%; position:relative; height:auto; }
+  .main-content { margin-left:0; }
+  .chat-layout { grid-template-columns:1fr; }
+}
