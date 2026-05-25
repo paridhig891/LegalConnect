@@ -105,6 +105,8 @@ LegalConnect/
 │   │   └── context
 │
 └── README.md
+```
+---
 
 # ⚙️ Backend Setup
 
@@ -112,14 +114,13 @@ LegalConnect/
 
 ```bash
 git clone <your-repository-url>
-```bash
 cd LegalConnect/backend
-
+```
 ## 2️⃣ Create MySQL Database
 Open MySQL and run:
 ```SQL
 CREATE DATABASE legalconnect;
-
+```
 ## 3️⃣ Configure Application Properties
 
 Open:
@@ -133,29 +134,29 @@ Add/update the following configuration:
 spring.datasource.url=jdbc:mysql://localhost:3306/legalconnect
 spring.datasource.username=root
 spring.datasource.password=your_password
-
+```
 # JPA / HIBERNATE
 ```text
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.format_sql=true
-
+```
 
 # SERVER CONFIGURATION
 ```text
 server.port=8080
-
+```
 # JWT CONFIGURATION
 ```text
 jwt.secret=your_secret_key
 jwt.expiration=86400000
-
+```
 # FLYWAY MIGRATION
 ```text
 spring.flyway.enabled=true
 spring.flyway.locations=classpath:db/migration
 spring.flyway.baseline-on-migrate=true
-
+```
 # FILE UPLOAD
 spring.servlet.multipart.max-file-size=10MB
 spring.servlet.multipart.max-request-size=10MB
@@ -163,20 +164,21 @@ spring.servlet.multipart.max-request-size=10MB
 ## 4️⃣ Install Maven Dependencies
 ```bash
 mvn clean install
+```
 ## 5️⃣ Run Backend Server
 ```bash
 mvn spring-boot:run
-
+```
 Backend will start on:
 ```http
 http://localhost:8080
-
+```
 ## 6️⃣ Verify Backend Running
 
 Open browser:
 ```http
 http://localhost:8080
-
+```
 Or test APIs using Postman.
 Example:
 POST http://localhost:8080/api/auth/register
@@ -188,6 +190,8 @@ Use the following credentials to access the Admin Dashboard:
 ```text
 Email: admin@legalconnect.com
 Password: admin123
+```
+---
 
 # 💻 Frontend Setup
 
@@ -195,16 +199,13 @@ Password: admin123
 
 ```bash
 cd frontend
-
+```
 ## 2️⃣ Install Dependencies
 ```bash
 npm install
-
+```
 ## 3️⃣ Run Frontend Development Server
 npm run dev
-
-Frontend will start on:
-http://localhost:3000
 
 ## 4️⃣ Verify Frontend Running
 Open browser:
